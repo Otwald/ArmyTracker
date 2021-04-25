@@ -1,0 +1,25 @@
+<div>
+  <label>Wähle eine Fraktion</label>
+  <select [formControl]="factionFormControll" class="form-control">
+    <option disabled>Wähle Fraktion</option>
+    <option
+      *ngFor="let element of factions | keyvalue"
+      value="{{ element.key }}"
+    >
+      {{ element.value }}
+    </option>
+  </select>
+</div>
+<div *ngIf="faction">
+  <p>Füge Einheiten deiner {{ faction.name }} Armee hinzu</p>
+  <label>HQ-Einheiten</label>
+  <select class="form-control">
+    <option disabled>Wähle Fraktion</option>
+    <option
+      *ngFor="let element of factions | keyvalue"
+      value="{{ element.key }}"
+    >
+      {{ element.value }}
+    </option>
+  </select>
+</div>
